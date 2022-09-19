@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+<div class= "content">
+
+</div>
+
+<script>
+function SDropDown(){
+    const dropDownMenu = document.createElement('div');
+    dropDownMenu.classList.add('Sdropdownbase');
+    const menubutton = document.createElement('button');
+    menubutton.classList.add('menubutton');
+    menubutton.innerText = 'Expand'
+
+    dropDownMenu.appendChild(menubutton);
+    dropDownMenu.innerHTML = dropDownMenu.innerHTML +
+    `
+    <div class = 'Sitem'>Item 2</div>
+    <div class = 'Sitem'>Item 3</div>
+    <div class = 'Sitem'>Item 4</div>
+    <div class = 'Sitem'>Item 5</div>
+    `;
+
+    dropDownMenu.addEventListener('click',function(){
+        dropDownMenu.classList.add('Sdropdownfull');
+    });
+
+    return dropDownMenu;
+};
+
+const cont = document.querySelector('.content');
+
+cont.appendChild(SDropDown());
+
+
+</script>
+</body>
+</html>
