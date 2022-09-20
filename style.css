@@ -3,12 +3,29 @@ display:flex;
 font-size: 2rem;
 flex-direction: column;
 justify-content: flex-start;
-align-items: center;
-padding: 0.1rem;
-height: 2rem;
+align-items: left;
+
+height: 2.5rem;
 overflow:hidden;
 }
 
 .Sdropdownfull {
-overflow:scroll;
+overflow:visible;
+height: 1.5rem;
+}
+
+.expand {
+justify-content: start;
+background-color: rgb(255, 255, 200);
+width:100%;
+border: 0px;
+font-size: 2rem;
+text-align: left;
+padding:0px;
+}
+
+.items{
+width:100%;
+background-color: azure;
+border: 2px solid rgba(223, 220, 220, 0.411);
 }

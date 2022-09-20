@@ -14,24 +14,30 @@
 </div>
 
 <script>
-function SDropDown(){
+function SDropDown(NoItems){
     const dropDownMenu = document.createElement('div');
     dropDownMenu.classList.add('Sdropdownbase');
-    const menubutton = document.createElement('button');
-    menubutton.classList.add('menubutton');
-    menubutton.innerText = 'Expand'
 
-    dropDownMenu.appendChild(menubutton);
-    dropDownMenu.innerHTML = dropDownMenu.innerHTML +
-    `
-    <div class = 'Sitem'>Item 2</div>
-    <div class = 'Sitem'>Item 3</div>
-    <div class = 'Sitem'>Item 4</div>
-    <div class = 'Sitem'>Item 5</div>
-    `;
+    const expand = document.createElement('button');
+    expand.classList.add('expand');
+    expand.innerText = 'Expand';
 
-    dropDownMenu.addEventListener('click',function(){
-        dropDownMenu.classList.add('Sdropdownfull');
+    dropDownMenu.appendChild(expand);
+
+    for ( let i = 0; i < NoItems; i++) {
+        let newRow = document.createElement('div')
+        newRow.classList.add('items');
+        dropDownMenu.appendChild(newRow);
+        newRow.innerText = 'Title';
+    };
+
+    expand.addEventListener('click',function(){
+
+        if (dropDownMenu.classList.contains('Sdropdownfull') == true){
+            dropDownMenu.classList.remove('Sdropdownfull');
+        } else {
+            dropDownMenu.classList.add('Sdropdownfull')
+        };
     });
 
     return dropDownMenu;
@@ -39,7 +45,7 @@ function SDropDown(){
 
 const cont = document.querySelector('.content');
 
-cont.appendChild(SDropDown());
+cont.appendChild(SDropDown(8));
 
 
 </script>
