@@ -18,25 +18,31 @@ function SDropDown(NoItems){
     const dropDownMenu = document.createElement('div');
     dropDownMenu.classList.add('Sdropdownbase');
 
+
+    const dropDownContent = document.createElement('div');
+    dropDownContent.classList.add('items');
+
     const expand = document.createElement('button');
     expand.classList.add('expand');
-    expand.innerText = 'Expand';
+    expand.innerText = 'Menu';
 
     dropDownMenu.appendChild(expand);
+    dropDownMenu.appendChild(dropDownContent);
+    let newRow = document.createElement('div')
 
     for ( let i = 0; i < NoItems; i++) {
         let newRow = document.createElement('div')
-        newRow.classList.add('items');
-        dropDownMenu.appendChild(newRow);
+        dropDownContent.appendChild(newRow);
         newRow.innerText = 'Title';
     };
 
+
     expand.addEventListener('click',function(){
 
-        if (dropDownMenu.classList.contains('Sdropdownfull') == true){
-            dropDownMenu.classList.remove('Sdropdownfull');
+        if (dropDownContent.classList.contains('Sdropdownfull') == true){
+            dropDownContent.classList.remove('Sdropdownfull');
         } else {
-            dropDownMenu.classList.add('Sdropdownfull')
+            dropDownContent.classList.add('Sdropdownfull')
         };
     });
 

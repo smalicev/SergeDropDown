@@ -1,18 +1,15 @@
 .Sdropdownbase {
-display:flex;
+display:inline-block;
+position:relative;
 font-size: 2rem;
 flex-direction: column;
 justify-content: flex-start;
 align-items: left;
-
 height: 2.5rem;
-overflow:hidden;
+background-color: rgb(22, 76, 255);
 }
 
-.Sdropdownfull {
-overflow:visible;
-height: 1.5rem;
-}
+
 
 .expand {
 justify-content: start;
@@ -25,7 +22,14 @@ padding:0px;
 }
 
 .items{
+display: none;
+position: absolute;
 width:100%;
-background-color: azure;
+background-color: rgb(22, 76, 255);
 border: 2px solid rgba(223, 220, 220, 0.411);
+z-index: 1;
+}
+
+.Sdropdownfull {
+display:block;
 }
