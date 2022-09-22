@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+html * {
+    font-family:'Pontano Sans','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgba(31, 31, 31, 0.849);
+    text-shadow: 0 0 2.5px rgba(0,0,0,0.5);
+}
+
+
 .Sdropdownbase {
 display:inline-block;
 position:relative;
@@ -6,30 +16,39 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: left;
 height: 2.5rem;
-background-color: rgb(22, 76, 255);
 }
 
-
+ul {
+    padding-left: 0px;
+    margin:0px;
+}
 
 .expand {
 justify-content: start;
-background-color: rgb(255, 255, 200);
+background-color: rgb(255, 236, 244);
 width:100%;
 border: 0px;
 font-size: 2rem;
 text-align: left;
-padding:0px;
+padding:10px;
+box-shadow: inset -5px -5px 20px #d4d2d2ad, inset 5px 5px 20px #d4d2d2ad;
 }
 
 .items{
-display: none;
+height:0px;
+max-height:0px;
+text-align: center;
 position: absolute;
 width:100%;
-background-color: rgb(22, 76, 255);
-border: 2px solid rgba(223, 220, 220, 0.411);
+background-color: rgb(255, 236, 244);
+box-shadow: inset -5px -5px 20px #d4d2d2ad, inset 5px 5px 20px #d4d2d2ad;
 z-index: 1;
+overflow:hidden;
 }
 
 .Sdropdownfull {
-display:block;
+height:auto;
+max-height:900px;
+transition-property: all;
+transition-duration: 0.4s;
 }
